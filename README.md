@@ -1,2 +1,2 @@
-# file-drive-decentralizer
-decentralized storage system 
+# D-drive
+decentralized file storage system 
