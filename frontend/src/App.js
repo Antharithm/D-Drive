@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { ethers } from "ethers";
 import DecentraDrive from "./artifacts/contracts/DecentraDrive.sol/DecentraDrive.json";
+import FileUpload from "./components/FileUpload";
+import Display from "./components/Display";
+import Modal from "./components/Modal";
 import "./App.css";
 
 function App() {
@@ -36,7 +39,18 @@ function App() {
     provider && wallet();
   }, []);
 
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <h1 style={{ color: "white" }}>DecentraDrive</h1>
+      <div class="bg"></div>
+      <div class="bg bg2"></div>
+      <div class="bg bg3"></div>
+
+      <p style={{ color: "white" }}>Account : "Not Connected"</p>
+      <FileUpload accounts={accounts} contract={contract}></FileUpload>
+      <Display accounts={accounts} contract={contract}></Display>
+    </div>
+  );
 }
 
 export default App;
