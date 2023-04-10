@@ -1,55 +1,77 @@
-import { useEffect, useState } from "react";
+import Upload from "./artifacts/contracts/DecentraDrive.sol/DecentraDrive.json";
+import { useState, useEffect } from "react";
 import { ethers } from "ethers";
-import DecentraDrive from "./artifacts/contracts/DecentraDrive.sol/DecentraDrive.json";
 import FileUpload from "./components/FileUpload";
 import Display from "./components/Display";
 import Modal from "./components/Modal";
 import "./App.css";
 
 function App() {
-  const [accounts, setAccount] = useState("");
+  const [account, setAccount] = useState("");
   const [contract, setContract] = useState(null);
   const [provider, setProvider] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
-    const wallet = async () => {
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
 
+    const loadProvider = async () => {
       if (provider) {
+        window.ethereum.on("chainChanged", () => {
+          window.location.reload();
+        });
+
+        window.ethereum.on("accountsChanged", () => {
+          window.location.reload();
+        });
         await provider.send("eth_requestAccounts", []);
         const signer = provider.getSigner();
         const address = await signer.getAddress();
-        console.log(address);
         setAccount(address);
+        let contractAddress = "Your Contract Address Here";
 
-        const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
         const contract = new ethers.Contract(
           contractAddress,
-          DecentraDrive.abi,
+          Upload.abi,
           signer
         );
-        console.log(contract);
+        //console.log(contract);
         setContract(contract);
-        setProvider(signer);
+        setProvider(provider);
       } else {
-        alert("Metamask is not installed");
+        console.error("Metamask is not installed");
       }
     };
-    provider && wallet();
+    provider && loadProvider();
   }, []);
-
   return (
-    <div className="App">
-      <h1 style={{ color: "white" }}>DecentraDrive</h1>
-      <div class="bg"></div>
-      <div class="bg bg2"></div>
-      <div class="bg bg3"></div>
+    <>
+      {!modalOpen && (
+        <button className="share" onClick={() => setModalOpen(true)}>
+          Share
+        </button>
+      )}
+      {modalOpen && (
+        <Modal setModalOpen={setModalOpen} contract={contract}></Modal>
+      )}
 
-      <p style={{ color: "white" }}>Account : "Not Connected"</p>
-      <FileUpload accounts={accounts} contract={contract}></FileUpload>
-      <Display accounts={accounts} contract={contract}></Display>
-    </div>
+      <div className="App">
+        <h1 style={{ color: "white" }}>Gdrive 3.0</h1>
+        <div class="bg"></div>
+        <div class="bg bg2"></div>
+        <div class="bg bg3"></div>
+
+        <p style={{ color: "white" }}>
+          Account : {account ? account : "Not connected"}
+        </p>
+        <FileUpload
+          account={account}
+          provider={provider}
+          contract={contract}
+        ></FileUpload>
+        <Display contract={contract} account={account}></Display>
+      </div>
+    </>
   );
 }
 
