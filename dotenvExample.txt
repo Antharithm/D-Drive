@@ -1,0 +1,5 @@
+PRIVATE_KEY="36da37babecbc3f3f0e8c848bd....."
+GOERLI_RPC_URL="https://eth-goerli.g.alchemy.com/v2/LN6Dy7dffpZb....."
+ETHERSCAN_API_KEY="GP33DJIY9ANFUQ5....."
+PINATA_API_KEY="1a8ac0518....."
+PINATA_SECRET_API_KEY="77bc326d1de2f1890989daa....."
