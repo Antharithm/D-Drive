@@ -1,4 +1,4 @@
-import DecentraDrive from "./components/artifacts/contracts/DecentraDrive.sol/DecentraDrive.json";
+import DecentraDrive from "./artifacts/contracts/DecentraDrive.sol/DecentraDrive.json";
 import { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import FileUpload from "./components/FileUpload";
