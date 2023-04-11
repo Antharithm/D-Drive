@@ -12,7 +12,7 @@ To run this program you will need to set up the following:
 5. CD back to the main directory and create a dotenv file (see example) imput all of the parameters
 6. Compile the smart contract form the main directory `npx hardhat compile`
 7. Deploy smart contract on Ethereum Goerli testnet and run this command: `npx hardhat run scrips/deploy.js --network goerli`
-8. CD back to the frontend folder and run `npm run start` App will launch from a new browser window.
+8. CD back to the "frontend" folder and run `npm run start` App will launch from a new browser window.
 
 Try running some of the following tasks:
 
