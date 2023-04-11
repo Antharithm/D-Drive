@@ -10,7 +10,7 @@ Decentralized file storage system.
 3. Run `npm install` from the main directory
 4. CD into the "frontend" folder and run `npm install`
 5. Compile the smart contract form the main directory `npx hardhat compile`
-6. Deploy the smart contract on the Ethereum Goerli testnet and run this command: `npx hardhat run scrips/deploy.js --network goerli
+6. Deploy the smart contract on the Ethereum Goerli testnet and run this command: `npx hardhat run scrips/deploy.js --network goerli`
 
 Try running some of the following tasks:
 
