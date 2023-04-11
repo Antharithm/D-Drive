@@ -35,7 +35,7 @@ module.exports = {
       }
   },
   path: {
-    artifacts: "./components/artifacts",
+    artifacts: "./client/src/artifacts",
   },
   etherscan: {
       apiKey: process.env.ETHERSCAN_API_KEY,
