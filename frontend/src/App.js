@@ -1,4 +1,4 @@
-import Upload from "./artifacts/contracts/DecentraDrive.sol/DecentraDrive.json";
+import DecentraDrive from "../src/artifacts/contracts/DecentraDrive.sol/DecentraDrive.json";
 import { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import FileUpload from "./components/FileUpload";
@@ -32,7 +32,7 @@ function App() {
 
         const contract = new ethers.Contract(
           contractAddress,
-          Upload.abi,
+          DecentraDrive.abi,
           signer
         );
         //console.log(contract);
