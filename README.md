@@ -6,6 +6,16 @@ Decentralized file storage system.
 
 ###
 
+Technologies Used:
+JavaScript
+Ethers.js
+React.js
+Solidity
+Hardhat
+IPFS
+
+###
+
 To run this program you will need to set up the following:
 1. Metamask account (save your private key inside of a dotenv file). https://metamask.io/
 2. Pinata account (save your API and Secret Key inside of a dotenv file). https://www.pinata.cloud/
