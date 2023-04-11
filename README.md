@@ -9,8 +9,10 @@ Decentralized file storage system.
 2. Pinata account (save your API and Secret Key inside of a dotenv file). https://www.pinata.cloud/
 3. Run `npm install` from the main directory
 4. CD into the "frontend" folder and run `npm install`
-5. Compile the smart contract form the main directory `npx hardhat compile`
-6. Deploy smart contract on Ethereum Goerli testnet and run this command: `npx hardhat run scrips/deploy.js --network goerli`
+5. CD back to the main directory and create a dotenv file (see example) imput all of the parameters
+6. Compile the smart contract form the main directory `npx hardhat compile`
+7. Deploy smart contract on Ethereum Goerli testnet and run this command: `npx hardhat run scrips/deploy.js --network goerli`
+8. CD back to the frontend filder and run `npm run start` App should automatically open a new browser and run as expected.
 
 Try running some of the following tasks:
 
