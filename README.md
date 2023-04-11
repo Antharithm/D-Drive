@@ -2,6 +2,8 @@
 
 Decentralized file storage system.
 
+![DecentraDriveIMG](https://user-images.githubusercontent.com/83500098/231229815-c25081a8-cc78-42c1-bed5-f5784ee3a4a4.png)
+
 ###
 
 To run this program you will need to set up the following:
