@@ -3,7 +3,7 @@
 Decentralized file storage system.
 #
 A powerful smart contract that allows for decentralized file storage on the Ethereum blockchain. A user can interact with the front end and upload files to IPFS using Pinatas API. Generate CIDs and store metadata conveniently across a network of nodes with the click of a button. Allows for toggle view access to any specific Ethereum address, granting them or revoking access rights to your files. Think of this as a decentralized Google Drive, web3 style.
-
+#
 ![DecentraDriveIMG](https://user-images.githubusercontent.com/83500098/231229815-c25081a8-cc78-42c1-bed5-f5784ee3a4a4.png)
 
 #
