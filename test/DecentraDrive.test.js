@@ -1,12 +1,10 @@
-const { anyValue } = require("@nomicfoundation/hardhat-chai-matchers/withArgs");
 const { expect } = require("chai");
-const { ethers } = require("hardhat");
 
 describe("DecentraDrive", function () {
   let decentraDrive;
   let owner;
+  let user1;
   let user2;
-  let user3;
 
   beforeEach(async function () {
     const DecentraDrive = await ethers.getContractFactory("DecentraDrive");
@@ -19,6 +17,18 @@ describe("DecentraDrive", function () {
       .connect(owner)
       .addIMG(owner.address, "https://example.com/image.jpg");
     const urls = await decentraDrive.display(owner.address);
+    expect(urls).to.deep.equal(["https://example.com/image.jpg"]);
+  });
+
+  it("Should only allow authorized users to access a user's drive", async function () {
+    await decentraDrive
+      .connect(owner)
+      .addIMG(owner.address, "https://example.com/image.jpg");
+    await expect(
+      decentraDrive.connect(user1).display(owner.address)
+    ).to.be.revertedWith("You don't have access");
+    await decentraDrive.connect(owner).allowUser(user1.address);
+    const urls = await decentraDrive.connect(user1).display(owner.address);
     expect(urls).to.deep.equal(["https://example.com/image.jpg"]);
   });
 });
