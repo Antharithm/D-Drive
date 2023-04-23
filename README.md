@@ -29,7 +29,7 @@ To run this program you will need the following:
 8. Deploy smart contract on Ethereum Goerli testnet and run this command: `npx hardhat run scrips/deploy.js --network goerli`
 9. CD back to the "client" folder and run: `npm run start` App will launch from a new browser window.
 
-Try running some of the following tasks:
+Try running some of the following optional tasks:
 
 ```shell
 npx hardhat help
