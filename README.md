@@ -18,7 +18,7 @@ Technologies Used:
 
 #
 
-To run this program you will need to set up the following:
+To run this program you will need the following:
 1. Metamask account (save your private key inside of a dotenv file). https://metamask.io/
 2. Pinata account (save your API and Secret Key inside of a dotenv file). https://www.pinata.cloud/
 3. Clone this repo to your local device and CD into that folder.
